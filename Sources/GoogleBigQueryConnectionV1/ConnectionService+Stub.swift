@@ -26,19 +26,19 @@ extension Clients {
   protocol ConnectionServiceStub {
     func createConnection(
       request: CreateConnectionRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryConnectionV1.Connection
+    ) async throws -> GoogleBigQueryConnectionV1.Connection
 
     func getConnection(
       request: GetConnectionRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryConnectionV1.Connection
+    ) async throws -> GoogleBigQueryConnectionV1.Connection
 
     func listConnections(
       request: ListConnectionsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryConnectionV1.ListConnectionsResponse
+    ) async throws -> GoogleBigQueryConnectionV1.ListConnectionsResponse
 
     func updateConnection(
       request: UpdateConnectionRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryConnectionV1.Connection
+    ) async throws -> GoogleBigQueryConnectionV1.Connection
 
     func deleteConnection(
       request: DeleteConnectionRequest, options: GoogleCloudGax.RequestOptions
@@ -67,7 +67,7 @@ extension Clients {
 
     public func createConnection(
       request: CreateConnectionRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryConnectionV1.Connection {
+    ) async throws -> GoogleBigQueryConnectionV1.Connection {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -88,12 +88,12 @@ extension Clients {
       }
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBigqueryConnectionV1.Connection.self, from: data)
+        GoogleBigQueryConnectionV1.Connection.self, from: data)
     }
 
     public func getConnection(
       request: GetConnectionRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryConnectionV1.Connection {
+    ) async throws -> GoogleBigQueryConnectionV1.Connection {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -108,12 +108,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBigqueryConnectionV1.Connection.self, from: data)
+        GoogleBigQueryConnectionV1.Connection.self, from: data)
     }
 
     public func listConnections(
       request: ListConnectionsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryConnectionV1.ListConnectionsResponse {
+    ) async throws -> GoogleBigQueryConnectionV1.ListConnectionsResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -131,12 +131,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBigqueryConnectionV1.ListConnectionsResponse.self, from: data)
+        GoogleBigQueryConnectionV1.ListConnectionsResponse.self, from: data)
     }
 
     public func updateConnection(
       request: UpdateConnectionRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBigqueryConnectionV1.Connection {
+    ) async throws -> GoogleBigQueryConnectionV1.Connection {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -157,7 +157,7 @@ extension Clients {
       }
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBigqueryConnectionV1.Connection.self, from: data)
+        GoogleBigQueryConnectionV1.Connection.self, from: data)
     }
 
     public func deleteConnection(
